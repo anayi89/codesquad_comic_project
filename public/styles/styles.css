@@ -219,22 +219,15 @@ label[for=comic_synopsis] {
 }
 
 /* rounded edges of comic card */
-.comic_card table {
+.comic_card {
     border-spacing: 1px;
     border-collapse: separate;
     border-radius: 25px;
     border: 0;
     box-shadow: 0 0 0 5px var(--yellow-color);
-}
-
-.comic_card table tr:first-child td:first-child {
     background-color: var(--blue-color);
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    padding: 0px 0px 15px 0px;
-}
-
-.comic_card table tr:last-child td:last-child {
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
@@ -262,8 +255,8 @@ label[for=comic_synopsis] {
 
 /* rounded edges of comic card's image */
 .comic_card img {
-    width: 400px;
-    height: 600px;
+    width: 100%;
+    height: auto;
     border: 2px solid var(--white-color);
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
