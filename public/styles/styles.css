@@ -15,6 +15,7 @@
 body {
     margin: auto;
     width: 60%;
+    font-family: "Open Sans";
 }
 
 /* help vertically center the content_box */
@@ -23,22 +24,18 @@ body {
 .nav_bar {
     padding: 0px 0px 10px 0px;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-flow: column wrap;
 }
 
 .logoless_navbar {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-.logoless_navbar div {
-    padding: 0px 105px;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
 }
 
 .nav_bar, .footer {
     background-color: var(--blue-color);
+    font-family: "Fredericka the Great";
 }
 
 /* logo */
@@ -75,7 +72,7 @@ body {
 
 /* spacing between input elements in forms on login.html, create.html and update.html */
 .login_form div, .create_form div, .update_form div {
-    display: block;
+    /* display: block; */
     margin: 0px 0px 20px 0px;
 }
 
@@ -93,6 +90,7 @@ body {
 .content_box span, .content_box1 span, .content_box2 span {
     text-align: center;
     color: var(--blue-color);
+    font-size: 2vw;
 }
 
 /* "ADD NEW COMIC" button on admin.html */
@@ -143,11 +141,6 @@ body {
 }
 
 /* form on create.html */
-.create_form {
-    margin: 0 auto;
-    width: 60%;
-}
-
 .create_form label, .update_form label {
     display: inline-block;
     width: 150px;
@@ -204,8 +197,29 @@ label[for=comic_synopsis] {
     width: 70%;
 }
 
-.update_form input[type=text] {
-    width: 252px;
+/* labels and text fields on comic books on update.html and create.html */
+.update_form label, .create_form label {
+    width: 15vw;
+}
+
+.update_form input[type=text], .create_form input[type="text"], .update_form select, .create_form select {
+    width: 18vw;
+}
+
+/* login.html */
+.update_form, .create_form {
+    flex-flow: row wrap;
+    margin: 0;
+    width: 45vw;
+}
+
+/* email and password labels and text fields on login.html */
+.login_email label, .login_password label {
+    width: 15vw;
+}
+
+.login_email input[type=text], .login_password input[type=password] {
+    width: 20vw;
 }
 
 /* fun_home.html */
@@ -295,9 +309,8 @@ label[for=comic_synopsis] {
     margin: 30px 0px 0px 0px;
     padding: 0px 20px;
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
 }
 
 .footer p {
@@ -308,7 +321,6 @@ label[for=comic_synopsis] {
     color: var(--yellow-color);
 }
 
-/* convert the footer into columns */
 .column {
     text-align: center;
 }
