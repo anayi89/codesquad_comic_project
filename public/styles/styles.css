@@ -127,11 +127,7 @@ body {
     border-collapse: collapse;
 }
 
-.admin_table table {
-    padding: 15px 0px;
-}
-
-.admin_table table, .admin_table td, .admin_table th {
+.admin_table, .admin_table td, .admin_table th {
     border: 1px solid var(--blue-color);
     padding: 5px 10px 5px 5px;
 }
@@ -160,8 +156,8 @@ label[for=comic_synopsis] {
 }
 
 .content_box2 a img {
-    width: 200px;
-    height: 300px;
+    width: 100%;
+    height: auto;
 }
 
 .content_box2 ul, .footer ul {
@@ -210,7 +206,6 @@ label[for=comic_synopsis] {
 .update_form, .create_form {
     flex-flow: row wrap;
     margin: 0;
-    width: 45vw;
 }
 
 /* email and password labels and text fields on login.html */
@@ -321,12 +316,116 @@ label[for=comic_synopsis] {
     color: var(--yellow-color);
 }
 
+/* 4 columns in the footer */
 .column {
     text-align: center;
+    width: 25%;
+    padding: 1%;
 }
 
 /* CodeSquad logo */
 .footer a img {
-    width: 150px;
-    height: 65px;
+    width: 75%;
+    height: auto;
+}
+
+/* mobile devices */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    /* links in nav_bar */
+    .logoless_navbar {
+        display: none;
+    }
+
+    /* menu icon in nav_bar */
+    .nav_bar i {
+        color: var(--white-color);
+        width: 100vw;
+        justify-self: flex-end;
+    }
+
+    /* table on admin.html */
+    .admin_table {
+        width: 36vw;
+        display: block;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        margin: 0 auto;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .footer {
+        flex-flow: column wrap;
+        justify-content: center;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    /* forms on create.html, login.html and update.html */
+    /* textbox on create.html */
+    #comic_synopsis {
+        width: 10px;
+    }
+
+    /* section for each comic on index.html */
+    .comic_collection {
+        width: 100%;
+        padding: 0 0 25% 0;
+    }
+}
+
+/* tablets */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* links and menu icon in nav_bar */
+    .logoless_navbar div, .nav_bar i {
+        display: none;
+    }
+
+    /* table on admin.html */
+    .admin_table {
+        width: 41vw;
+    }
+}
+
+/* desktops */
+@media screen and (min-width: 1024px) {
+    /* menu icon in nav_bar */
+    .nav_bar i {
+        display: none;
+    }
+
+    /* comic cards on index.html */
+    .content_box2 {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+
+    .content_box2 div:not(:last-child) {
+        width: 16vw;
+        height: auto;
+    }
+
+    /* table on admin.html */
+    .admin_table {
+        width: 42vw;
+    }
+
+    /* comic card on fun_home.html */
+    .comic_card {
+        display: flex;
+        width: 99%;
+    }
+
+    .comic_cover {
+        width: 400%;
+    }
+    
+    .comic_info {
+        width: 607%;
+        font-size: xx-small;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+    }
 }
